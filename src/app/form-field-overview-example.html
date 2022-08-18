@@ -1,0 +1,30 @@
+
+<form [formGroup]="newForm" (ngSubmit)="addItem()">
+
+
+<form formArrayName="items"
+*ngFor="let item of newForm.get('items').controls; let i = index;">
+
+<form [formGroupName]="i">
+<mat-form-field appearance="fill">
+  <mat-label>Input</mat-label>
+  <input matInput formControlName="name" />
+</mat-form-field>
+
+  <mat-label>Select</mat-label>
+  <mat-select formControlName="level"
+  placeholder="Lesson level">
+  <mat-select>
+    <mat-option value="one">First option</mat-option>
+    <mat-option value="two">Second option</mat-option>
+  </mat-select>
+</form>
+</form>
+
+
+<button type="submit" >Primary</button>
+
+</form>
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
